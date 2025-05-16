@@ -1,0 +1,36 @@
+{
+  "name": "edgetunnel",
+  "version": "0.1.0",
+  "description": "Run proxy on Cloudflare Workers",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}'",
+    "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}'",
+    "build": "rollup -c",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20250510.0",
+    "@eslint/js": "^9.26.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@swc/core": "^1.11.24",
+    "@tsconfig/recommended": "^1.0.8",
+    "eslint": "^9.26.0",
+    "javascript-obfuscator": "^4.1.1",
+    "prettier": "^3.5.3",
+    "rollup": "4.40.2",
+    "rollup-plugin-obfuscator": "^1.1.0",
+    "typescript": "5.8.3",
+    "typescript-eslint": "^8.32.0",
+    "unplugin-swc": "^1.5.2",
+    "wrangler": "^4.14.4"
+  },
+  "dependencies": {
+    "itty-router": "^5.0.18"
+  }
+}

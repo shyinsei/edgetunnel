@@ -1,0 +1,10 @@
+name = "edgetunnel"
+main = "dist/_worker.js"
+compatibility_date = "2024-09-02"
+
+[build]
+command = "pnpm build"
+
+[vars]
+UUID = "a51a1914-f0e1-42ff-bfb3-9fc669a9523e,98d26342-aa5c-49ad-be80-d6b916f909f6"
+PROXY_IP = "132.145.127.203:8443,141.145.216.142:2087,129.159.241.172:443"
