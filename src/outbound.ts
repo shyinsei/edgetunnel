@@ -117,7 +117,7 @@ export async function processDNS(
   ws: WebSocket,
   rawData: ArrayBuffer,
 ) {
-  const socket = connect('4.4.4.4:53')
+  const socket = connect('9.9.9.9:53')
   const writer = socket.writable.getWriter()
   await writer.write(rawData)
   ws.addEventListener('message', async (e) => {
