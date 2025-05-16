@@ -30,7 +30,7 @@
     "rollup-plugin-obfuscator": "^1.1.0",
     "typescript": "5.8.3",
     "typescript-eslint": "^8.32.0",
-    "unplugin-swc": "^1.5.2",
+    "unplugin-swc": "^1.5.3",
     "wrangler": "^4.14.4"
   },
   "dependencies": {
