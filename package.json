@@ -11,7 +11,10 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
   },
-  "author": "",
+  "author": {
+    "name": "Shinsei",
+    "email": "shinsei@anche.no"
+  },
   "license": "MIT",
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
