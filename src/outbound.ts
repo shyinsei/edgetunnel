@@ -112,41 +112,45 @@ export async function processTCP(
   )
 }
 
-async function sendDNSRequest(data: ArrayBuffer): Promise<ArrayBuffer> {
-  return await fetch('https://cloudflare-dns.com/dns-query', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/dns-message',
-      Accept: 'application/dns-message',
-    },
-    body: data.slice(2),
-  }).then(async (resp) => {
-    const ab = await resp.arrayBuffer()
-    const newBuffer = new ArrayBuffer(ab.byteLength + 2)
-    const dataview = new DataView(newBuffer)
-    dataview.setUint16(0, ab.byteLength)
-    const ua = new Uint8Array(newBuffer)
-    ua.set(new Uint8Array(ab), 2)
-    return newBuffer
-  })
-}
-
 export async function processDNS(
   version: number,
   ws: WebSocket,
   rawData: ArrayBuffer,
 ) {
-  const resp = await sendDNSRequest(rawData)
-  ws.send(await makeResponse(version, resp))
-
+  const socket = connect('4.4.4.4:53')
+  const writer = socket.writable.getWriter()
+  await writer.write(rawData)
   ws.addEventListener('message', async (e) => {
-    if (typeof e.data === 'string') {
-      return
-    }
-    ws.send(await sendDNSRequest(e.data.slice(2)))
+    await writer.write(e.data)
   })
-  ws.addEventListener('error', (e) => {
-    safeClose(ws, 0, e.error)
-    console.log(e.error)
+
+  ws.addEventListener('close', async () => {
+    await socket.close()
   })
+  ws.addEventListener('error', async () => {
+    safeClose(ws)
+    await socket.close()
+  })
+
+  const reader = socket.readable.getReader()
+  const { value, done } = await reader.read()
+  if (done || !value) {
+    throw Error('connection closed')
+  }
+  ws.send(await makeResponse(version, value))
+  reader.releaseLock()
+
+  socket.readable.pipeTo(
+    new WritableStream({
+      write(chunk) {
+        ws.send(chunk)
+      },
+      abort(reason) {
+        safeClose(ws, 0, reason)
+      },
+      close() {
+        safeClose(ws)
+      },
+    }),
+  )
 }
