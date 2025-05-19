@@ -19,7 +19,7 @@
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250515.0",
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^9.27.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@swc/core": "^1.11.24",
     "@tsconfig/recommended": "^1.0.8",
