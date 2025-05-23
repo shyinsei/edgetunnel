@@ -19,21 +19,21 @@
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250523.0",
-    "@eslint/js": "^9.27.0",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@swc/core": "^1.11.24",
-    "@tsconfig/recommended": "^1.0.8",
-    "eslint": "^9.26.0",
-    "javascript-obfuscator": "^4.1.1",
-    "prettier": "^3.5.3",
+    "@eslint/js": "9.27.0",
+    "@rollup/plugin-node-resolve": "16.0.1",
+    "@swc/core": "1.11.24",
+    "@tsconfig/recommended": "1.0.8",
+    "eslint": "9.26.0",
+    "javascript-obfuscator": "4.1.1",
+    "prettier": "3.5.3",
     "rollup": "4.41.0",
-    "rollup-plugin-obfuscator": "^1.1.0",
+    "rollup-plugin-obfuscator": "1.1.0",
     "typescript": "5.8.3",
-    "typescript-eslint": "^8.32.1",
-    "unplugin-swc": "^1.5.2",
-    "wrangler": "^4.14.4"
+    "typescript-eslint": "8.32.1",
+    "unplugin-swc": "1.5.2",
+    "wrangler": "4.14.4"
   },
   "dependencies": {
-    "itty-router": "^5.0.18"
+    "itty-router": "5.0.18"
   }
 }
