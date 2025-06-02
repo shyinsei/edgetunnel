@@ -49,8 +49,8 @@ importers:
         specifier: 8.33.0
         version: 8.33.0(eslint@9.28.0)(typescript@5.8.3)
       unplugin-swc:
-        specifier: 1.5.2
-        version: 1.5.2(@swc/core@1.11.24)(rollup@4.41.1)
+        specifier: 1.5.4
+        version: 1.5.4(@swc/core@1.11.24)(rollup@4.41.1)
       wrangler:
         specifier: 4.18.0
         version: 4.18.0(@cloudflare/workers-types@4.20250601.0)
@@ -1497,14 +1497,14 @@ packages:
   unenv@2.0.0-rc.17:
     resolution: {integrity: sha512-B06u0wXkEd+o5gOCMl/ZHl5cfpYbDZKAT+HWTL+Hws6jWu7dCiqBBXXXzMFcFVJb8D4ytAnYmxJA83uwOQRSsg==}
 
-  unplugin-swc@1.5.2:
-    resolution: {integrity: sha512-bf8DJO8lD1wpnwFglQpVH2XEaFfVsSU5C7yFyLwGT1gxskPtejlDeuttKxjtmHTSqrDsQrK0FCFdhw3Ny+K7hA==}
+  unplugin-swc@1.5.4:
+    resolution: {integrity: sha512-NYa0rEUI8+Ckr+azVyAWIBWOrqnoWsDeHPLCMAsEWXJzkNwG1GtYf/Fe872ulOPKRmQsY1VEd20d5Y3fLiiZQQ==}
     peerDependencies:
       '@swc/core': ^1.2.108
 
-  unplugin@1.16.1:
-    resolution: {integrity: sha512-4/u/j4FrCKdi17jaxuJA0jClGxB1AvU2hw/IuayPc4ay1XGaJs/rbb4v5WKwAjNifjmXK9PIFyuPiaK8azyR9w==}
-    engines: {node: '>=14.0.0'}
+  unplugin@2.3.5:
+    resolution: {integrity: sha512-RyWSb5AHmGtjjNQ6gIlA67sHOsWpsbWpwDokLwTcejVdOjEkJZh7QKu14J00gDDVSh8kGH4KYC/TNBceXFZhtw==}
+    engines: {node: '>=18.12.0'}
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
@@ -2906,18 +2906,19 @@ snapshots:
       pathe: 2.0.3
       ufo: 1.6.1
 
-  unplugin-swc@1.5.2(@swc/core@1.11.24)(rollup@4.41.1):
+  unplugin-swc@1.5.4(@swc/core@1.11.24)(rollup@4.41.1):
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.41.1)
       '@swc/core': 1.11.24
       load-tsconfig: 0.2.5
-      unplugin: 1.16.1
+      unplugin: 2.3.5
     transitivePeerDependencies:
       - rollup
 
-  unplugin@1.16.1:
+  unplugin@2.3.5:
     dependencies:
       acorn: 8.14.1
+      picomatch: 4.0.2
       webpack-virtual-modules: 0.6.2
 
   uri-js@4.4.1:
