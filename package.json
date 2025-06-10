@@ -29,7 +29,7 @@
     "rollup": "4.42.0",
     "rollup-plugin-obfuscator": "1.1.0",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.33.1",
+    "typescript-eslint": "8.34.0",
     "unplugin-swc": "1.5.4",
     "wrangler": "4.19.1"
   },
