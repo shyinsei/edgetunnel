@@ -31,7 +31,7 @@
     "typescript": "5.8.3",
     "typescript-eslint": "8.34.0",
     "unplugin-swc": "1.5.4",
-    "wrangler": "4.19.2"
+    "wrangler": "4.20.0"
   },
   "dependencies": {
     "itty-router": "5.0.18"
